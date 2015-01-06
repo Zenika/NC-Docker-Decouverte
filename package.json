@@ -1,0 +1,15 @@
+{
+  "name": "nc-docker-decouverte",
+  "version": "0.0.1",
+  "description": "Nightclazz docker decouverte",
+  "author": "Zenika",
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/Zenika/nc-docker-decouverte"
+  },
+  "private": true,
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "zenika-formation-framework": "git+https://github.com/Zenika/Formation--Framework.git#tags/0.1.1"
+  }
+}
