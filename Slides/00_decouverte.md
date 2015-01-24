@@ -17,15 +17,11 @@
 
 <!-- .slide: id="master-toc" class="toc" -->
 
-- [Syntaxe de base](#/1)
-- [Code et tableaux](#/2)
-- [Positionnement des images](#/3)
-- [Animations et syntaxe avancée](#/4)
+- [Qu'est-ce que Docker](#/0/1)
+- [Comparaison avec les VMs](#/0/2)
+- [Hands-on](#/0/3)
+- [Cycle de vie d'un conteneur](#/0/4)
+- [Patterns d'utilisations simple](#/0/5)
+- [Hands-on](#/0/6)
 
 
-
-## Logistique
-
-* Horaires
-* Déjeuner & pauses
-* Autres questions ?

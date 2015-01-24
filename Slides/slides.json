@@ -1,7 +1,10 @@
 [
-  "00_agenda.md",
-  "01_bases.md",
-  "02_code.md",
-  "03_images.md",
-  "04_animations.md"
+    "00_decouverte.md",
+    "01_what_is_docker.md",
+    "02_compare_with_vm.md",
+    "03_hands_on.md",
+    "04_lifecycle.md",
+    "05_simple_use_case.md",
+    "06_hands_on.md",
+    "07_questions_teasing.md"
 ]
