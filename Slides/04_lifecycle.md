@@ -10,6 +10,7 @@
     - Dispose d'un état
 
 Notes :
+- 
 - Tous est HASH (comme git)
 
 
@@ -38,21 +39,36 @@ Notes :
 
 
 
-## Conteneurs
+## Conteneurs (1/2)
 
 schema
 
-- run
-- start
-- stop
-- commit
-- create
-- diff
-- exec
-- rm
-- ps
 
-Un conteneur peut avoir un nom
+Notes :
+- Run d'un conteneur :
+    - Vérifie la présence de l'image, et la télécharge si besoins
+    - Créer un conteneur à base de l'image, alloue un système de
+    fichier de l'image en read-only et un layer en écriture
+    - Configure/ alloue in interface "network" (bridge, ..), setup
+      l'adresse IP (dispo dans pool)
+    - Exécute le processus demandé et capture les outputs (stdout,
+      stderr, ..)
+- Un conteneur est nommé (de manière automatique ou manuelle)
+
+
+
+## Conteneurs (2/2)
+
+- run : 
+- start :
+- stop :
+- commit :
+- create :
+- diff :
+- exec :
+- rm :
+- ps :
+
 
 
 
