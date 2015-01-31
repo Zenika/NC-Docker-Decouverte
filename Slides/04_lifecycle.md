@@ -1,10 +1,10 @@
 ## Cycle de vie
 
+- Registry (*Distribution*)
+    - Liste d'images
 - Images (*Construction*)
     - Template
     - Lecture seule
-- Registry (*Distribution*)
-    - Liste d'images
 - Conteneurs (**Runtime**) :
     - Basé sur une image
     - Dispose d'un état
@@ -27,7 +27,7 @@ Notes :
 
 ## Images (2/2)
 
-Commandes usuels
+Commandes usuelles
 
 - images : liste les images disponible en local
 ```bash
@@ -42,6 +42,61 @@ debian      jessie  b427819b829a  4 days ago  715.6 MB
 Notes :
 - rmi : supprime également les tags, vérifie cohérence avec les
   enfants, etc..
+
+
+
+## Conteneurs (1/3)
+
+![](ressources/images/decouverte-conteneur-workflow.png)
+
+Notes :
+- Run d'un conteneur :
+    - Vérifie la présence de l'image, et la télécharge si besoins
+    - Créer un conteneur à base de l'image, alloue un système de
+    fichier de l'image en read-only et un layer en écriture
+    - Configure/ alloue in interface "network" (bridge, ..), setup
+      l'adresse IP (dispo dans pool)
+    - Exécute le processus demandé et capture les outputs (stdout,
+    stderr, ..)
+- start : démarre un conteneur préalablement créé
+- stop : arrête un conteneur en route
+- commit : Construit une nouvelle image à partir de l'état de conteneur actuel
+- Un conteneur est nommé (de manière automatique ou manuelle)
+
+
+
+## Conteneurs (2/3)
+
+Quelques commandes en plus
+
+- create : Créer un conteneur à base d'une image => run == create + start
+- diff : Montre les différences au niveau filesystem entre le
+  conteneur et son image associée
+- exec : Lancer une commande à l'intérieur d'un conteneur
+- rm : Supprime un conteneur (et donc ses données avec)
+- ps : Liste les conteneurs actif et inactif
+
+
+
+
+## Conteneurs (3/3)
+
+![](ressources/images/decouverte-conteneur-layer.png)
+
+
+
+## Volumes pour persister les données
+
+Découpler le cycle de vie de données du cycle de vie du conteneur
+
+schema (fs on host, mounted in container)
+schema (data container)
+
+Notes :
+- Si volume pas binder (via commandline), docker créer un dossiers
+  dans /var/lib/docker/...
+- Partage de volumes entre conteneur ``--volumes-from``
+- Persistent volumes data-container ``\o/``
 
 
 
@@ -105,50 +160,3 @@ $ docker run -rm -i test1 # it runs !
 ```
 
 
-
-## Conteneurs (1/3)
-
-schema
-
-
-Notes :
-- Run d'un conteneur :
-    - Vérifie la présence de l'image, et la télécharge si besoins
-    - Créer un conteneur à base de l'image, alloue un système de
-    fichier de l'image en read-only et un layer en écriture
-    - Configure/ alloue in interface "network" (bridge, ..), setup
-      l'adresse IP (dispo dans pool)
-    - Exécute le processus demandé et capture les outputs (stdout,
-      stderr, ..)
-- Un conteneur est nommé (de manière automatique ou manuelle)
-
-
-
-## Conteneurs (2/3)
-
-- run : 
-- start :
-- stop :
-- commit :
-- create :
-
-
-
-## Conteneurs (3/3)
-
-- diff :
-- exec :
-- rm :
-- ps :
-
-
-
-
-
-## Persistence de l'état des conteneurs
-
-- Commandes qui te font persisté l'état et celle qui ne le font pas
-
-
-
-## Volumes
