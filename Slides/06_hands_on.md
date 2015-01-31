@@ -1,6 +1,14 @@
-### Hands-on
+## Hands-on #1
 
+Notes :
 - Build/images/run/ps/modif/stop/start/run/exec/rm/rmi a partir d'un dockefile
+
+
+
+## Hands-on #2
+
+
+Notes :
 - Mise en place de pattern simples (préparer dockerfiles)
     - build : qqch à builder
     - env dev : appli (apache, tomcat, bdd) => ça tourne

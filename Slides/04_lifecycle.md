@@ -1,6 +1,15 @@
 ## Cycle de vie
 
-- images & conteneurs
+- Images (*Construction*)
+    - Template
+    - Lecture seule
+- Registry (*Distribution*)
+    - Liste d'images
+- Conteneurs (**Runtime**) :
+    - Basé sur une image
+    - Dispose d'un état
+
+Notes :
 - Tous est HASH (comme git)
 
 
@@ -17,6 +26,15 @@ schema
 
 
 ## Dockerfile
+
+```dockerfile
+MAINTAINER John Doe <john@doe.com>
+FROM ubuntu:14.04
+COMMAND ... # << output/hash
+```
+
+Notes :
+- Explain each line of a Dockerfile example
 
 
 
