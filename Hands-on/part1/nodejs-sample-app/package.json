@@ -1,10 +1,8 @@
 {
-  "name": "docker-centos-hello",
+  "name": "nc-decouverte-hello",
   "private": true,
   "version": "0.0.1",
-  "description": "Node.js Hello world app on CentOS using docker",
-  "author": "Daniel Gasienica <daniel@gasienica.ch>",
   "dependencies": {
-    "express": "3.2.4"
+    "express": "^4.8.0"
   }
 }
