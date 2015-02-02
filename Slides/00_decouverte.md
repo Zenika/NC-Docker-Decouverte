@@ -1,4 +1,4 @@
-# Docker débutant
+# Docker découverte
 
 <!-- .slide: class="page-title" -->
 
@@ -21,7 +21,7 @@
 - [Comparaison avec les VMs](#/0/2)
 - [Hands-on](#/0/3)
 - [Cycle de vie d'un conteneur](#/0/4)
-- [Patterns d'utilisations simple](#/0/5)
+- [Patterns d'utilisation simples](#/0/5)
 - [Hands-on](#/0/6)
 
 
