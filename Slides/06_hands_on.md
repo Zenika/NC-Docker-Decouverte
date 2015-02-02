@@ -1,5 +1,15 @@
 ## Hands-on #1
 
+- Construire une image Docker (et compléter ce qui manque)
+- Démarrer des conteneurs à partir de l'image fraichement créée
+- ``run`` options
+    - ``-v`` (``--volume``) : monter un dossier du host dans le
+      conteneur
+    - ``-p`` (``--publish``) : publier un port sur l'interface du host
+      (``hostPort:containerPort`` ou ``ip:hostPort:containerPort``)
+    - ``--name`` : associer un nom au conteneur
+
+
 Notes :
 - Build/images/run/ps/modif/stop/start/run/exec/rm/rmi a partir d'un dockefile
 

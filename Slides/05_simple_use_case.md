@@ -36,7 +36,7 @@ Notes :
     - .. vérifier que mon application compile sous Java 6
     - .. vérifier que mon application est compatible avec MySQL 5.6
     - .. vérifier que mon application est *scalable*
-    - .. tester gitlab ``xD``
+    - .. tester gitlab, kanboard, une appli node.js ``xD``
 
 
 
