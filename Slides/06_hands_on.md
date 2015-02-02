@@ -15,7 +15,23 @@ Notes :
 
 
 
-## Hands-on #2
+## Hands-on #2 : Dockerfile
+
+
+Notes :
+- Elasticsearch in docker (by hands)
+    - 2 installations différentes pour voir le mécanisme de cache
+    - Mettre des TODO pour qu'ils remplissent
+
+
+
+## Hands-on #3 : Patterns
+
+- Builder : Builder votre projet favoris avec Docker (donner des
+  exemples : maven, scala, clojure, haskell) (se baser sur jdk7)
+- Tester l'image builder avec jdk6, jdk8
+- Tester des softwares pré-packager (gitlab, ..)
+- Installation pattern (pandoc with haskell ?)
 
 
 Notes :

@@ -18,6 +18,7 @@ Notes :
 - Isoler les services externes du SI sur les machines de Dev'
 - Mutualiser et distribuer les configurations de ces services
 - Passage d'un projet à l'autre simplifié
+- Intégration continue \o/
 
 (schema?)
 
