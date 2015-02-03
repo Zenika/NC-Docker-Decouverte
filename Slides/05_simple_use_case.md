@@ -2,29 +2,32 @@
 
 
 
-## Build isoler (build container) [dev]
+## Isoler vos build
 
-- Language stack
+- Language stack & image de build
     - Build tools inside images
-- "Separation of context"
-    - Jenkins & slaves ont just besoin de Docker
-    - Dev & Intégration continue *build* sur les même images
+- "Separation of concern"
+    - Jenkins & slaves ont juste besoin de Docker
+    - Dev & Intégration continue se base sur les même images pour le *build*
 - Les developpeurs ont "la main" sur le *build*
 
 Notes :
+- build container
 - Language stack
 - Jenkins/CI
 
 
 
-## Setup de l'environnement de développement (dev tools) [dev]
+## Setup de l'environnement de développement
 
-- Isoler les services externes du SI sur les machines de Dev'
+- Isoler les services externes du SI sur les machines de developement
+    - Pas besoin de les installer manuellement
 - Mutualiser et distribuer les configurations de ces services
+    - Fournit en amont
+    - Les mêmes pour tous
 - Passage d'un projet à l'autre simplifié
+    - ``docker stop``, ``docker run``
 - Intégration continue \o/
-
-(schema?)
 
 Notes :
 - External services (ActiveMQ, ..), pas besoin de les installer sur le
@@ -33,7 +36,7 @@ Notes :
 
 
 
-## Tests in a different environment [dev,ops]
+## Tests in a different environment
 
 - Que faire si je veux.. :
     - .. vérifier que mon application tourne sous Ruby 2.1.5
@@ -46,7 +49,7 @@ Notes :
 
 
 
-## Outils pour le déploiement [ops]
+## Outils pour le déploiement
 
 
 
