@@ -26,11 +26,15 @@ Notes :
 
 - Builder : Builder votre projet favoris avec Docker (donner des
   exemples : maven, scala, clojure, haskell) (se baser sur jdk7)
-    - Java : (maven), (gradle) spring-security
-    - Clojure
-    - Haskell
-    - Golang
-- Tester l'image builder avec jdk6, jdk8
+    - Java : [fluent-http](https://github.com/CodeStory/fluent-http)
+      (maven),
+      [spring-security](https://github.com/spring-projects/spring-security)
+      (gradle)
+    - Clojure :
+      [liberator](https://github.com/clojure-liberator/liberator)
+      (lein), [tentacles](https://github.com/Raynes/tentacles) (lein)
+    - Haskell : [pandoc](https://github.com/jgm/pandoc) (cabal + make)
+- Tester l'image elasticsearch avec jdk6, jdk8 ou fluent-http avec jdk7
 - Tester des softwares pré-packager (gitlab, ..)
 - Installation pattern (pandoc with haskell ?)
 - Tips : l'option ``--rm`` (supprime automatiquement le conteneur s'il
