@@ -1,9 +1,12 @@
 # Qu'est-ce que c'est Docker ?
-![Containers on the bay](ressources/goldengate-containers.jpg)
 
 
 
-## Des chiffres (de mars 2013 à aujourd'hui)
+## Tout le monde en parle
+
+
+
+## Depuis mars 2013 à aujourd'hui...
 
 * 18,000+ GitHub stars
 * 100M+ Docker Engine downloads
@@ -11,64 +14,88 @@
 * 150+ Docker Meetup Groups in 50 countries
 * 730+ community contributors
 * 50,000 third-party projects on GitHub using Docker as well as partnerships spanning PaaS, operating systems, hosting services, CI platforms, and more.
-* Over 100 user-generated case studies available from companies such as eBay, Rackspace, New Relic, Gilt, Spotify, Cloudflare, Yandex, Cambridge Healthcare, Yelp and RelatelQ.
 
 
 
-## Définitions
+## Qu'est ce que c'est ?
 
-docker.com (open platform)
+<br>
 > Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.
 
+<p align="right">*docker.com*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</p>
 
-wikipedia.org (containers)
+<br>
+<br>
+
 > Docker is an open-source project that automates the deployment of applications inside software containers
 
+<p align="right">*wikipedia.org*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</p>
 
 
-## Les conteneurs
 
-Le livre the box
+## Isolation
+
+<image>
 
 
-"Lighweight containers"
-"Standard"
+
+## Isolation des process
+
+LXC
+chroot (filesystem jail)
+cgroups (control resouces access)
+Namespaces
+
+
+## Format standard pour *livrer*  des applications
+
+<image>
+
+Note :
+Livre "The Box" sur la révolution économique qui a suivi l'introduction des conteneurs. Livre préféré par Bill Gates
+
+
+
+## Versionning à la Git
+
+Fast Copy on Write (CoW) :
+    - AUFS
+    - Btrfs
+    - OverlyaFS
+    - ...
 
 Notes :
-This is a note
+http://developerblog.redhat.com/2014/09/30/overview-storage-scalability-docker/
 
 
 
-## Qu'est-ce qu'un conteneur
+## Architecture
 
-chroot
-- filesystem
-
-on steroids
-- proc
-- mem
-- network
+<image>
 
 
+## Prérequis
 
-## Anatomie d Docker
+Linux : kernel > 3.8
 
-- Union File System
-- LXC
+Mac OS et Windows : boot2docker
+
+Note :
+Linux : cgroups nécéssaires et sont apparu dans 2.6.24 mais > 3.8 pour des problèmes d'affidabilité du kernel
+Windows : client mode
 
 
 
-## Docker sur d'autres plateformes
+## En resumant
 
-Linux kernel > 3.8
-Boot2Docker
-
-
-
-## Pourquoi utiliser des conteneurs
-
-- Isoler pourquoi ?
-    - sécurité
-    - controle des ressources
-    - eviter dependency hell (conflit de libs/versions)
-- Environments reproductible
+- Isolation des process
+- Format standard
+- Versionning
