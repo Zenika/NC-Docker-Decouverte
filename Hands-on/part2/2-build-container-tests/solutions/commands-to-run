@@ -1,0 +1,17 @@
+
+# pandoc - OK
+docker run --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp zenika/haskell-make make deps full
+
+# fluent-http - OK
+docker run --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp maven:3-jdk-8 mvn clean install
+# Try with Java 7 ?
+docker run --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp maven:3-jdk-7 mvn clean install
+
+# spring-security (gradle) - OK
+docker run --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp java:7 ./gradlew
+
+# liberator - OK
+docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp clojure lein test
+
+# tentacles - OK
+docker run -it --rm -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp clojure lein test

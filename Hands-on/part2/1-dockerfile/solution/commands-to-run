@@ -1,0 +1,5 @@
+docker build -t elasticsearch-test .
+for i in {0..5}
+do
+        docker run -d -p 920${i}:9200 -p 930${i}:9300 elasticsearch-test
+done
