@@ -24,8 +24,7 @@ Notes :
 
 ## Hands-on #2 : Patterns
 
-- Builder : Builder votre projet favoris avec Docker (donner des
-  exemples : maven, scala, clojure, haskell) (se baser sur jdk7)
+- Builder : Builder votre projet favoris avec Docker
     - Java : [fluent-http](https://github.com/CodeStory/fluent-http)
       (maven),
       [spring-security](https://github.com/spring-projects/spring-security)
