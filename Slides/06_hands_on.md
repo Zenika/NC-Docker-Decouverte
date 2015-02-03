@@ -1,6 +1,10 @@
+# Hands-on n.2
+
+
+
 ## Hands-on #1 : Dockerfile
 
-- Construire une image Docker (et compléter ce qui manque)
+- Construire une image Docker (et compléter ce qui manque) d'Elasticsearch
 - Démarrer des conteneurs à partir de l'image fraichement créée
 - ``run`` options
     - ``-v`` (``--volume``) : monter un dossier du host dans le
@@ -22,6 +26,10 @@ Notes :
 
 - Builder : Builder votre projet favoris avec Docker (donner des
   exemples : maven, scala, clojure, haskell) (se baser sur jdk7)
+    - Java : (maven), (gradle) spring-security
+    - Clojure
+    - Haskell
+    - Golang
 - Tester l'image builder avec jdk6, jdk8
 - Tester des softwares pré-packager (gitlab, ..)
 - Installation pattern (pandoc with haskell ?)
