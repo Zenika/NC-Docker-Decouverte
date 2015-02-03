@@ -1,4 +1,4 @@
-## Hands-on #1
+## Hands-on #1 : Dockerfile
 
 - Construire une image Docker (et compléter ce qui manque)
 - Démarrer des conteneurs à partir de l'image fraichement créée
@@ -12,26 +12,21 @@
 
 Notes :
 - Build/images/run/ps/modif/stop/start/run/exec/rm/rmi a partir d'un dockefile
-
-
-
-## Hands-on #2 : Dockerfile
-
-
-Notes :
 - Elasticsearch in docker (by hands)
     - 2 installations différentes pour voir le mécanisme de cache
     - Mettre des TODO pour qu'ils remplissent
 
 
 
-## Hands-on #3 : Patterns
+## Hands-on #2 : Patterns
 
 - Builder : Builder votre projet favoris avec Docker (donner des
   exemples : maven, scala, clojure, haskell) (se baser sur jdk7)
 - Tester l'image builder avec jdk6, jdk8
 - Tester des softwares pré-packager (gitlab, ..)
 - Installation pattern (pandoc with haskell ?)
+- Tips : l'option ``--rm`` (supprime automatiquement le conteneur s'il
+  existe) peut être utile
 
 
 Notes :
