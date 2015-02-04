@@ -108,6 +108,7 @@ $ docker run -rm -i test1 # it runs !
 ```
 
 
+
 ## Conteneurs (1/3)
 
 ![](ressources/images/decouverte-conteneur-layer.png)
@@ -163,6 +164,3 @@ Notes :
   dans /var/lib/docker/...
 - Partage de volumes entre conteneur ``--volumes-from``
 - Persistent volumes data-container ``\o/``
-
-
-
