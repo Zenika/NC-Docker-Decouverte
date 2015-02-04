@@ -1,5 +1,7 @@
 # Cycle de vie
 
+![](ressources/images/rigole-pas.jpg)
+
 
 
 ## Cycle de vie

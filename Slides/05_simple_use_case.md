@@ -1,5 +1,7 @@
 # Pattern d'utilisation simples
 
+![](ressources/images/image-utile.png)
+
 
 
 ## Isoler vos build
