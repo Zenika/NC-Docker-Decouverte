@@ -4,14 +4,23 @@
 
 ## Hands-on #1 : Dockerfile
 
-- Construire une image Docker (et compléter ce qui manque) d'Elasticsearch
-- Démarrer des conteneurs à partir de l'image fraichement créée
+- Construire une image Docker d'Elasticsearch en complétant ce qui manque
+- Démarrer plusieurs conteneurs à partir de l'image fraichement créée
+- Voir le résultat dans votre navigateur (grâce au plugin head)
+
+
+
+## Hands-on #1 : Dockerfile Tips
+
+- Démarrer elasticsearch ``bin/elasticsearch``
 - ``run`` options
     - ``-v`` (``--volume``) : monter un dossier du host dans le
-      conteneur
+      conteneur (``hostFolder:containerFolder``)
     - ``-p`` (``--publish``) : publier un port sur l'interface du host
-      (``hostPort:containerPort`` ou ``ip:hostPort:containerPort``)
-    - ``--name`` : associer un nom au conteneur
+      (``hostPort:containerPort``)
+- Plusieurs images : binder des ports différents sur le host (9200,
+  9201, 9203, ..)
+- Voir les nœuds elasticsearch : http://127.0.0.1:9200/_plugin/head
 
 
 Notes :
@@ -28,11 +37,11 @@ Notes :
     - Java : [fluent-http](https://github.com/CodeStory/fluent-http)
       (maven),
       [spring-security](https://github.com/spring-projects/spring-security)
-      (gradle)
+      (java)
     - Clojure :
       [liberator](https://github.com/clojure-liberator/liberator)
-      (lein), [tentacles](https://github.com/Raynes/tentacles) (lein)
-    - Haskell : [pandoc](https://github.com/jgm/pandoc) (cabal + make)
+      (clojure), [tentacles](https://github.com/Raynes/tentacles) (clojure)
+    - Haskell : [pandoc](https://github.com/jgm/pandoc) (zenika/haskell-make)
 - Tester l'image elasticsearch avec jdk6, jdk8 ou fluent-http avec jdk7
 - Tester des softwares pré-packager (gitlab, ..)
 - Installation pattern (pandoc with haskell ?)

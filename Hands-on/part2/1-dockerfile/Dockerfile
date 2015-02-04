@@ -4,14 +4,13 @@ FROM
 MAINTAINER
 
 # Install elasticsearch
-# 1. Récupérer elasticsearch
-# 2. L'extraire à l'endroit souhaité
+# 1. Récupérer elasticsearch : https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.tar.gz
+# 2. L'extraire à l'endroit souhaité : tar xvzf
 # 3. Supprimer l'archive récupérer (pour gagner de la place)
-# Try 2 methods : multiple lines, one-line
 RUN
 
 # Declare volume
-VOLUME
+VOLUME ["/data"]
 
 # Installer un plugin elasticsearch, par example
 # - http://mobz.github.io/elasticsearch-head/
@@ -25,7 +24,7 @@ ADD
 EXPOSE
 
 # Le dossier de travail
-WORKDIR
+WORKDIR /data
 
 # La commande par défaut
 CMD
