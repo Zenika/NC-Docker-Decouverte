@@ -22,9 +22,11 @@ Notes :
 
 ## Images (1/2)
 
-Template multi-layer pour les conténeurs, héritage
+Template multi-layer pour les conténeurs, héritage entre images
 
 ![](ressources/images/decouverte-images-layer.png)
+
+Place sur le disque : 258M
 
 Notes :
 - Filesystème en oignon => gain de place
@@ -35,15 +37,15 @@ Notes :
 
 Commandes usuelles
 
-- images : liste les images disponible en local
+- ``images`` : liste les images disponible en local
 ```bash
 REPOSITORY  TAG     IMAGE ID      CREATED     VIRTUAL SIZE
 debian      jessie  b427819b829a  4 days ago  715.6 MB
 # […]
 ```
-- search : effectue une recherge sur le *hub* d'images
-- rmi : supprime une image disponible en local
-- build : construit une image à partir d'un ``Dockerfile``
+- ``search`` : effectue une recherge sur le *hub* d'images
+- ``rmi`` : supprime une image disponible en local
+- ``build`` : construit une image à partir d'un ``Dockerfile``
 
 Notes :
 - rmi : supprime également les tags, vérifie cohérence avec les
@@ -59,9 +61,9 @@ FROM debian:jessie                   # Basé sur Debian
 MAINTAINER John Doe <john@doe.com>
 
 RUN apt-get -y update                # Une commande
+RUN ["apt-get", "-y", "update"]      # La même ou presque
 RUN apt-get -y install git \ 
     openjdk-7-jre                    # Ou sur plusieurs lignes
-RUN ["echo", "ou comme ça"]
 
 ADD http://bit.ly/1HyjEeA /whale.gif # Ajout depuis un URI
 COPY target/foobar.jar /             # Copie d'un fichier
@@ -75,9 +77,10 @@ CMD ["java", "-jar", "/foobar.jar"]
 ```
 
 Notes :
-- Explain each line of a Dockerfile example
 - Chaque étape de la construction d'une image devient un layer =>
   cache de build (hash sur la ligne)
+- ADD marche avec URI (http, ..) + fichiers et dossier (avec regexp, * ..)
+- ENV pendant le build & lors du run du conteneur
 - .dockerignore : permet d'ignorer des fichiers entre le build et
   l'image final, ce qui permet de ne pas allourdir l'image (e.g. un
   répertoire .git, .svn, ..)
@@ -144,12 +147,12 @@ Notes :
 
 Quelques commandes en plus
 
-- create : Créer un conteneur à base d'une image => run == create + start
-- diff : Montre les différences au niveau filesystem entre le
+- ``create`` : Créer un conteneur à base d'une image => run == create + start
+- ``diff`` : Montre les différences au niveau filesystem entre le
   conteneur et son image associée
-- exec : Lancer une commande à l'intérieur d'un conteneur
-- rm : Supprime un conteneur (et donc ses données avec)
-- ps : Liste les conteneurs actif et inactif
+- ``exec`` : Lancer une commande à l'intérieur d'un conteneur
+- ``rm`` : Supprime un conteneur (et donc ses données avec)
+- ``ps`` : Liste les conteneurs actif et inactif
 
 
 
@@ -158,8 +161,11 @@ Quelques commandes en plus
 
 Découpler le cycle de vie de données du cycle de vie du conteneur
 
-schema (fs on host, mounted in container)
-schema (data container)
+* Dossier qui *bypass* les layers
+* Initialiser à la création du conteneur
+* Partage entre conteneur possible
+* Données directement écrite directement, non inclus dans l'image
+* Persistent tant qu'ils sont utilisés
 
 Notes :
 - Si volume pas binder (via commandline), docker créer un dossiers

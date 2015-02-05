@@ -17,6 +17,7 @@ github: *l0rd*<br>
 Vincent Demeester<br>
 *vincent.demeester@zenika.com*<br>
 github: *vdemeester*<br>
+*@vdemeest*
 <br>
 
 
