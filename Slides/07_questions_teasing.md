@@ -1,5 +1,7 @@
 # Prochaine session
 
+![](ressources/images/next-session.png)
+
 
 
 ## Proposition #1

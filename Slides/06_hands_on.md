@@ -1,5 +1,7 @@
 # Hands-on n.2
 
+![](ressources/images/hands-on-2.png)
+
 
 
 ## Hands-on #1 : Dockerfile
