@@ -1,5 +1,7 @@
 # Hands-on n.1
 
+![](ressources/images/hands-on-1.png)
+
 
 
 ## Hands-on #1 : Démarrer et arreter un conteneur
