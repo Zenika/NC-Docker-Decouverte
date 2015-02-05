@@ -4,6 +4,17 @@
 
 
 
+## Hands-on #0 : Configuration
+
+
+```bash
+git clone git clone git@github.com:Zenika/NC-Docker-Decouverte.git
+cd NC-Docker-Decouverte
+./setup_debian.sh
+```
+
+
+
 ## Hands-on #1 : Démarrer et arreter un conteneur
 
 - Démarrer un conteneur Docker à partir de l'image **debian:jessie** en ouvrant un shell bash en mode interactif
