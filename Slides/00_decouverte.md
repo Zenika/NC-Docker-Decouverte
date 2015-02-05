@@ -33,10 +33,14 @@ github: *vdemeester*<br>
    21h30-22h30 : Deuxieme hands-on (1h)<br>
 <br>
 
-**Vous avez des problèmes pour installer Docker ?**<br>
 
-- Nous avons des clés USB
-- Nous avons des VM sur le cloud Amazon
+**Vous avez des problèmes pour installer Docker ?**<br>
+Nous avons des clés USB
+<br>
+<br>
+**WiFi** : ZenikaGuest/Welcome2Zenika!
+
+
 
 
 
