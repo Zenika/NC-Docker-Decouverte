@@ -34,11 +34,16 @@ docker ps -ql | xargs docker rm
 
 
 
-### Une image, 50 conteneurs 
-Démarrer 50 conteneur et verifier les resouces utilisées
-    + htop
-    + for i in `seq 50`; do sudo docker run -d -p 8080 zenika/nodejs-sample-app:latest; done
-    + htop
+### Une image, 50 conteneurs
+Démarrer 50 conteneurs et verifier les resouces utilisées
+
+* ``htop`` (moniteur de resources)
+* 50 contereurs
+```bash
+for i in `seq 50`; do
+    sudo docker run -d -p 8080 zenika/nodejs-sample-app:latest;
+done
+```
 
 
 Notes :
