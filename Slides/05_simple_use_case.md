@@ -50,13 +50,6 @@ Notes :
 
 
 
-
-## Outils pour le déploiement
-
-
-
-
-
 ## The Universal Package Format
 
 - Remplacer ``apt-get``, ``yum``, ``pacman``, … par

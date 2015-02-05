@@ -48,8 +48,9 @@ debian      jessie  b427819b829a  4 days ago  715.6 MB
 - ``build`` : construit une image à partir d'un ``Dockerfile``
 
 Notes :
-- rmi : supprime également les tags, vérifie cohérence avec les
-  enfants, etc..
+- docker images
+- docker search fedora
+- docker rmi .. : supprime uniquement si pas d'enfant
 
 
 
@@ -128,7 +129,7 @@ Notes :
 ![](ressources/images/decouverte-conteneur-workflow.png)
 
 Notes :
-- Run d'un conteneur :
+- Run d'un conteneur : docker run test, docker run -ti fedora /bin/bash
     - Vérifie la présence de l'image, et la télécharge si besoins
     - Créer un conteneur à base de l'image, alloue un système de
     fichier de l'image en read-only et un layer en écriture
@@ -147,12 +148,12 @@ Notes :
 
 Quelques commandes en plus
 
-- ``create`` : Créer un conteneur à base d'une image => run == create + start
+- ``ps`` : Liste les conteneurs actif et inactif
+- ``exec`` : Lancer une commande à l'intérieur d'un conteneur
 - ``diff`` : Montre les différences au niveau filesystem entre le
   conteneur et son image associée
-- ``exec`` : Lancer une commande à l'intérieur d'un conteneur
+- ``create`` : Créer un conteneur à base d'une image
 - ``rm`` : Supprime un conteneur (et donc ses données avec)
-- ``ps`` : Liste les conteneurs actif et inactif
 
 
 
@@ -161,7 +162,7 @@ Quelques commandes en plus
 
 Découpler le cycle de vie de données du cycle de vie du conteneur
 
-* Dossier qui *bypass* les layers
+* Dossier qui n'utilise pas (bypass) les layers
 * Initialiser à la création du conteneur
 * Partage entre conteneur possible
 * Données directement écrite directement, non inclus dans l'image
@@ -172,3 +173,4 @@ Notes :
   dans /var/lib/docker/...
 - Partage de volumes entre conteneur ``--volumes-from``
 - Persistent volumes data-container ``\o/``
+- docker run test (avec volume, on écrit dedans et gogo)

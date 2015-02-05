@@ -6,9 +6,12 @@
 
 ## Hands-on #1 : Dockerfile
 
+![](ressources/images/docker-elasticsearch.png)
+
 - Construire une image Docker d'Elasticsearch en complétant ce qui manque
 - Démarrer plusieurs conteneurs à partir de l'image fraichement créée
 - Voir le résultat dans votre navigateur (grâce au plugin head)
+
 
 
 
@@ -44,11 +47,11 @@ Notes :
       [liberator](https://github.com/clojure-liberator/liberator)
       (clojure), [tentacles](https://github.com/Raynes/tentacles) (clojure)
     - Haskell : [pandoc](https://github.com/jgm/pandoc) (zenika/haskell-make)
+    - Tips : l'option ``--rm`` (supprime automatiquement le conteneur s'il
+      existe) peut être utile
 - Tester l'image elasticsearch avec jdk6, jdk8 ou fluent-http avec jdk7
-- Tester des softwares pré-packager (gitlab, ..)
-- Installation pattern (pandoc with haskell ?)
-- Tips : l'option ``--rm`` (supprime automatiquement le conteneur s'il
-  existe) peut être utile
+- Tester des softwares pré-packager
+  ([gitlab](https://github.com/sameersbn/docker-gitlab), ..)
 
 
 Notes :
