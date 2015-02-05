@@ -8,9 +8,7 @@
 
 
 ```bash
-git clone git clone git@github.com:Zenika/NC-Docker-Decouverte.git
-cd NC-Docker-Decouverte
-./setup_debian.sh
+curl -sSL https://raw.githubusercontent.com/Zenika/NC-Docker-Decouverte/master/Hands-on/setup_debian.sh | bash
 ```
 
 
