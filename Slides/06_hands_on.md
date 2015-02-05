@@ -24,7 +24,7 @@
     - ``-p`` (``--publish``) : publier un port sur l'interface du host
       (``hostPort:containerPort``)
 - Plusieurs images : binder des ports différents sur le host (9200,
-  9201, 9203, ..)
+  9201, 9202, ..)
 - Voir les nœuds elasticsearch : http://127.0.0.1:9200/_plugin/head
 
 
