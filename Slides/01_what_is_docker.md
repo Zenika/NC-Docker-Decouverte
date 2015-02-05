@@ -1,24 +1,23 @@
 # Qu'est-ce que Docker ?
 
+![](ressources/images/commitstrip-1.png)
 
-
-## Pourquoi Docker ?
-
-<br>
-<br>
-![Commitstrip](ressources/images/commitstrip-reversed.png)
 
 Notes :
-Les équipes ne travaillent pas de la meme facon
-Il n'y a pas de standard
-Docker est utile pour pout l'équipe de DEV et pour les sysadmins
-Il permet de mieux communiquer et a definit un standard
+Un sysadmin et un développeur qui <br> 
+travaillent chacun pour soi : un cas classique <br>
+Ils n'utilisent pas les mêmes outils <br>
+Chacun a ses résponsabilité et en veut pas d'autres  <br>
+Il manque un outil commun utile pour les deux  <br>
+Mais pas les VM : trop lourdes et pas versionnables ko
+pour les developpeurs. <br>
+Docker convient à tous les deux  <br>
+Et est devenu un standard de facto <br>
 
 
 
-## Comment y-est-on arrivé ?
+## Histoire de Docker
 
-<!-- .element class="fragment" -->
 *Quelques dates* :
 
 <!-- .element class="fragment" -->
@@ -63,9 +62,10 @@ Il permet de mieux communiquer et a definit un standard
 ![Commitstrip](ressources/images/what.gif)
 
 Notes :
-Nous n'avons toujours pas répondu aux questions suivantes :
-Qu'est ce que c'est Docker ?
-A quoi est du son succès ?
+On a compris a quoi sert Docker et on a  <br>
+vu son histoire.  <br>
+Mais nous ne savons toujours pas qu'est <br> 
+ce que c'est.
 
 
 
@@ -90,65 +90,104 @@ A quoi est du son succès ?
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;</p>
 
+Notes :
+Ce qu'il faut retenir ici c'est :
+
+- Pour développeurs et sysadmin 
+- Pour builder et livrer
+- Pour automatiser
+- Des conteneurs
 
 
-## Une métaphore - le transport maritime
+
+## Une métaphore - le transport de conteneurs
 
 ![](ressources/images/goldengate-containers.jpg)
 
 Notes :
-Pas encore très clair ? Une métaphore est plus piussante que 1000 définitions.
-Docker a pas mal de similitudes avec le transport maritime par conteneurs
-Le paquebot représente le systeme hote et la marchandise correspond aux process.
-Dans les présentation de Docker on insiste beaucoup sur cette comparaison...
+Mais c'est peut-être pas encore très clair...<br> 
+Une métaphore peut être plus efficace que 1000  <br>
+définitions. <br>
+Docker a pas mal de similitudes avec le transport par conteneurs.  <br>
+Le véhicule représente le systeme hôte et la marchandise correspond aux logiciel. <br>
+
+- de la même facon que les conteneurs de marchandises peuvent etre <br> 
+transportés par n'importe quel vehicule, les conteneurs <br>
+de logiciels peuvent tourner sur n'importe quel hôte. <br>
+- avec les conteneurs, le transport de marchandise est plus rapide <br>
+et, de même, le deployment de logiciel est plus rapide.
+- dans les deux cas on est devant une solution qui est devenue <br>
+un standard
 
 
 
 ## Une métaphore - une révolution
 
-![](ressources/images/thebox-thebook.png)
+![](ressources/images/thebox-thebook-small.png)
 
-<figure style="position: absolute; bottom: 30px; right: 0;">
+<figure style="position: absolute; bottom: 30px; right: 50px;">
     <img src="ressources/images/bill-gates.png" alt="Bill Gates"/>
 </figure>
 
 Notes :
-Le transport maritime par conteneurs a été une révolution.
-C'est un des livres préférés par Bill Gates en 2013 
+Apres être devenu un standard le transport par conteneur 
+a été une révolution  <br>
+C'est très bien décrit dans ce livre de l'année dernière  <br>
+qui est aussi le livre préféré de Bill en 2013. Curieux...
 
 
 
-## Architecture
+## Détails techniques - Architecture
 
 ![](ressources/images/docker-architecture.svg)
 
 Notes :
-Il y une partie cliente et une partie serveur (engine)
+Engine : la partie qui gère les conteneurs
+Client : la command line. Peut se connecter à un engine distant 
+Index : c'est le docker hub, le catalogue des images
 
 
 
-### Caractéristiques
+## Détails techniques - Isolation
 <br>
+> <p align="center">"chroot on steroids"</p>
 
-- Définition d'un standard
-- Process isolés
-- Virtualisation "légère"
-- Versionning (containers et images)
-
-
-
-## Détails techniques : Isolation
-
-![](ressources/images/docker-isolation.png)
+![](ressources/images/docker-isolation-small.png)
 
 Notes :
-libcontainer : depuis docker 0.9, une strate d'abstraction supplémentaire et rend Docker indépendant de LXC
+les versions modernes du kernel disposent des outils  <br>
+pour isoler les applications :
+
+- chroot : premier systeme de isolation (pour le filesystem)
+date du '79
+- cgroups : control goups pour isoler les 
+resources (CPU, RAM, I/O etc...). ils sont apparu dans 
+kernel v2.6.24 
+- namespaces : pour isoler les PID, chaque groupe aura 
+ses PID, ses mount, IPC etc...
+- lxc : exploite cgroups et namespaces
+- libvirt : wrapper des différents types de hypervisors
+- chroot : isolation du filesystem
+- libcontainer : depuis docker 0.9, une strate d'abstraction supplémentaire et rend Docker indépendant de LXC
 
 
 
-##  Détails techniques : Versionning à la Git
+##  Détails techniques : LXC vs Docker
 
-![](ressources/images/docker-filesystems-multilayer.png)
+Depuis v0.9 Docker ne dépend plus de LXC
+
+Qu'est Docker apporte en plus de LXC :
+
+- Environnment portable de deployment
+- Build automatisé à partir du Dockerfile
+- Versioning des images
+- Images réutilisables comme base images d'autres images
+- Docker Hub
+- Ecosystème
+
+##  Détails techniques : Union mount
+
+![](ressources/images/docker-filesystems-multilayer-small.png)
 
 ```go
 // Slice of drivers that should be used in an order
@@ -157,21 +196,13 @@ libcontainer : depuis docker 0.9, une strate d'abstraction supplémentaire et re
  "btrfs",
  "devicemapper",
  "vfs",
- "overlayfs",
+ "overlayfs"}
 ```
 
-
 Notes :
+Copy on write ou Union mount est une technique pour <br>
+faire un mount de plusieurs filesystem qui ressemble <br>
+a un fs unique.
+Docker se basait sur aufs au début mais d'autres systemes<br>
+de union mount sont apparus entretemps
 http://developerblog.redhat.com/2014/09/30/overview-storage-scalability-docker/
-
-
-
-## Prérequis
-
-- Linux : kernel version > 3.8
-
-- Mac OS et Windows : boot2docker
-
-Notes :
-Linux : cgroups nécéssaires et sont apparu dans 2.6.24 mais > 3.8 pour des problèmes d'affidabilité du kernel
-Windows : client mode

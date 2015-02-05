@@ -1,23 +1,31 @@
 # Qu'est-ce qu'une VM
 
+![](ressources/images/bug-en-prod.jpg)
+
 
 
 ## Comparaison de l'architecture VM/Conteneur
-- Diagrammes
-- Focus sur certains points du diagramme
+<br>
+![](ressources/images/vm-vs-docker.png)
 
 
 
 ## Quand utiliser une VMs
 
-
-
-## Quand utiliser un conteneur
+- Quand l'application dépend d'une version précise du kernel
+- Quand la sécurité du conteneur est importante
+- Sur Windows et Mac
 
 
 
 ## Quand utiliser les deux ?
 
-- Network lab
-- Windows/Mac obligé
-- Reproduire environement prod
+- Sur Windows et Mac
+- Quand on veut reproduire un environement de prod
+
+
+
+## Quand utiliser un conteneur
+<br>
+<br>
+Dans tous les autres cas ;-) 
