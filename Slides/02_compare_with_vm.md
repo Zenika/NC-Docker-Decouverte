@@ -1,4 +1,4 @@
-# Qu'est-ce qu'une VM
+# Containers vs VM
 
 ![](ressources/images/bug-en-prod.jpg)
 

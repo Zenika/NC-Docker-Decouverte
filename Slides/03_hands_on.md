@@ -1,82 +1,32 @@
 # Hands-on n.1
 
-![](ressources/images/hands-on-1.png)
+
+
+## Hands-on #1 : Démarrer et arreter un conteneur
+
+- Démarrer un conteneur Docker à partir de l'image **debian:jessie** en ouvrant un shell bash en mode interactif
+    + ``run`` options ``-t -i --rm``
+- Démarrer un conteneur Docker à partir de l'image **zenika/nodejs-sample-app:latest** en mode detached pour démarrer un serveur nodejs
+    + ``run`` option ``-d`` 
+- Récuperer l'identifiant du conteneur (ps), et arretez-le (stop)
+    + ``ps`` options
+        - ``-a`` : liste tous les conteneurs (démarrés, arrétés ou en pause)  
+        - ``-l`` : liste uniquement le dernier container 
 
 
 
-## Hands-on - Contenu
+## Hands-on #2 : Conteneurs vs VMs - Resources
 
-- La commande docker run
-- 50 conteneurs et une VM
-- Insécurité des conteneurs
-
-
-
-### Docker run
-
-En mode *foreground*
-```bash
-sudo docker run -i -t --rm debian:jessie bash
-```
-
-En mode *detached*
-```bash
-docker run -d -p 80:8080 zenika/nodejs-sample-app:latest
-```
-
-
-Notes :
-while true; do echo 'docker@zenika'; sleep 1; done
-sudo docker -d debian/jessie bash -c "while true; do echo 'docker@zenika'; sleep 1; done
-docker ps -ql | xargs docker logs -f
-docker ps -ql | xargs docker stop
-docker ps -ql | xargs docker rm
+- Démarrer 50 conteneur : 
+    -  Vérifier les resouces utilisées avant et après (avec ``htop`` par exemple)
+    -  Utiliser l'image **zenika/nodejs-sample-app:latest**
+    -  En mode detached
+- Démarrer 15 VM avec nodejs et vérifier les resources utlisées
 
 
 
-### Une image, 50 conteneurs
-Démarrer 50 conteneurs et verifier les resouces utilisées
+## Hands-on #3 : Conteneurs vs VMs - Isolation
+- Chercher le PID des process nodejs des 50 conteneurs démarrés auparavant en utilsant la commande ``ps`` 
+- Essayer de killer les process
+- Faire la même chose pour une VM 
 
-* ``htop`` (moniteur de resources)
-* 50 contereurs
-```bash
-for i in `seq 50`; do
-    sudo docker run -d -p 8080 zenika/nodejs-sample-app:latest;
-done
-```
-
-
-Notes :
-Clean-up
-docker ps -a -q | xargs docker stop
-docker ps -a -q |xargs docker rm
-
-
-
-### Comparaison avec une VM - utilisation des resources
-
-```bash
-image=Downloads/debian_wheezy_amd64_standard.qcow2
-snapshot=nodejs_sample_app
-qemu-system-x86_64 -hda $image -loadvm $snapshot --redir tcp:5555::8080 -nographic 
-qemu-system-x86_64 -hda $image -loadvm $snapshot --redir tcp:5556::8080 -nographic
-qemu-system-x86_64 -hda $image -loadvm $snapshot --redir tcp:5557::8080 -nographic
-qemu-system-x86_64 -hda $image -loadvm $snapshot --redir tcp:5558::8080 -nographic
-qemu-system-x86_64 -hda $image -loadvm $snapshot --redir tcp:5559::8080 -nographic
-```
-
-Notes :
-J'ai pris l'image debian_wheezy_amd64_standard.qcow2 ici: http://people.debian.org/~aurel32/qemu
-J'ai demarré la VM, installé node et lancé l'application
-J'ai crée un snapshot que j'ai appelé nodejs_sample_app http://wiki.qemu.org/Documentation/CreateSnapshot
-
-
-
-### Comparaison avec une VM - Isolation
-
-```bash
-# Get the number of node.js processes
-ps -ef | grep "node /src/index.js" | awk '{print $2}' | wc -l
-# Kill node.js processes
-ps -ef | grep "node /src/index.js" | awk '{print $2}' | xargs sudo kill
-```

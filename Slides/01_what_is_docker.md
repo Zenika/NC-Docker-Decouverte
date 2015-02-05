@@ -1,5 +1,6 @@
 # Qu'est-ce que Docker ?
 
+![](ressources/images/commitstrip-2.png)
 ![](ressources/images/commitstrip-1.png)
 
 
@@ -16,12 +17,13 @@ Et est devenu un standard de facto <br>
 
 
 
-## Histoire de Docker
+## Docker timeline
 
+<!-- .element class="fragment" -->
 *Quelques dates* :
 
 <!-- .element class="fragment" -->
-- **mars 2013 :** dotCloud livre Docker en Open Source
+- **mars 2013 :** dotCloud rend disponible Docker en Open Source
 
 <!-- .element class="fragment" -->
 - **aout 2013 :** eBay, Uber, Cloudfare utilisent Docker
@@ -106,9 +108,8 @@ Ce qu'il faut retenir ici c'est :
 
 Notes :
 Mais c'est peut-être pas encore très clair...<br> 
-Une métaphore peut être plus efficace que 1000  <br>
-définitions. <br>
-Docker a pas mal de similitudes avec le transport par conteneurs.  <br>
+Une métaphore peut être plus efficace que 1000 définitions. <br>
+Docker a pas mal de similitudes avec le transport par conteneurs. <br>
 Le véhicule représente le systeme hôte et la marchandise correspond aux logiciel. <br>
 
 - de la même facon que les conteneurs de marchandises peuvent etre <br> 
@@ -173,17 +174,26 @@ ses PID, ses mount, IPC etc...
 
 
 ##  Détails techniques : LXC vs Docker
-
+<br>
 Depuis v0.9 Docker ne dépend plus de LXC
 
-Qu'est Docker apporte en plus de LXC :
+*Qu'est Docker apporte en plus de LXC* ?
 
-- Environnment portable de deployment
+<!-- .element class="fragment" -->
 - Build automatisé à partir du Dockerfile
-- Versioning des images
-- Images réutilisables comme base images d'autres images
+
+<!-- .element class="fragment" -->
 - Docker Hub
+
+<!-- .element class="fragment" -->
 - Ecosystème
+
+<!-- .element class="fragment" -->
+- Versioning des images
+
+<!-- .element class="fragment" -->
+- Images réutilisables comme base pout d'autres images
+
 
 
 
